@@ -71,7 +71,7 @@ body {
 .block-background{
     position:absolute;
     inset:0;
-    background:url("src/free-background.jpg") center center / cover no-repeat;
+    background:url("src/img/bg2.png") center center / cover no-repeat;
     z-index:0;
 }
 
@@ -144,4 +144,9 @@ body {
     to{
         transform: rotate(360deg);
     }
+}
+
+.agenda-title-font{
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
 }
