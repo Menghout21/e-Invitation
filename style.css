@@ -1,0 +1,147 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
+
+body {
+    font-family: "Moulpali", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+/* Hide scrollbar everywhere */
+* {
+    scrollbar-width: none;      /* Firefox */
+    -ms-overflow-style: none;   /* IE & Edge */
+}
+
+*::-webkit-scrollbar {
+    display: none;              /* Chrome, Edge, Safari */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main-container{
+    width:100%;
+    min-height:100vh;
+    background:#d3b5b34a;
+    padding:20px 0;
+}
+
+/* .block-content{
+    width:650px;
+    max-width:100%;
+    min-height:100vh;
+    background:url("src/free-background.jpg") center/cover no-repeat;
+    overflow:hidden;
+} */
+
+.welcome-image{
+    width:100%;
+    min-height:100vh;
+    background:url("src/PUG_3665.JPG") center/cover no-repeat;
+}
+
+.title-top{
+    width:100%;
+    height:70px;
+    background:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
+}
+
+.title-top h1{
+    margin:0;
+}
+
+.block-content{
+    position: relative;
+    width:650px;
+    max-width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.block-background{
+    position:absolute;
+    inset:0;
+    background:url("src/free-background.jpg") center center / cover no-repeat;
+    z-index:0;
+}
+
+.block-scroll{
+    position:relative;
+    z-index:1;
+    height:100%;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+.block-scroll::-webkit-scrollbar{
+    width:0;
+}
+
+.block-scroll{
+    scrollbar-width:none;
+}
+
+.music-btn{
+    position:fixed;
+    right:15px;
+    top:5%;
+    transform:translateY(-50%);
+    width:60px;
+    height:60px;
+    border:none;
+    border-radius:50%;
+    background:#ffffff;
+    color:#d89c3d;
+    font-size:28px;
+    box-shadow:0 5px 20px rgba(0,0,0,.25);
+    cursor:pointer;
+    z-index:9999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    transition:.4s;
+}
+
+.music-btn.hide{
+    opacity:0;
+    transform:translateY(-50%) translateX(80px);
+    pointer-events:none;
+}
+
+.music-btn:hover{
+    transform:translateY(-50%) scale(1.08);
+}
+
+@media(max-width:768px){
+
+    .music-btn{
+        right:15px;
+        width:55px;
+        height:55px;
+        font-size:25px;
+    }
+
+}
+.music-btn.playing i{
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
