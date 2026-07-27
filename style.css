@@ -42,24 +42,82 @@ body {
     width:100%;
     min-height:100vh;
     background:url("src/PUG_3665.JPG") center/cover no-repeat;
+    padding:20px;
+}
+.welcome-content{
+    width:100%;
+    min-height:100vh;
+    background:rgba(65, 63, 63, 0.5);
+    padding:20px;
+    border-radius:20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    
 }
 
 .title-top{
-    width:100%;
-    height:70px;
-    background:#fff;
+    
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
     font-family:"Moulpali", sans-serif;
     color:rgb(249,175,89);
+    
 }
 
 .title-top h1{
     margin:0;
+    font-size:20px;
 }
 
+.invite-name{
+    width:100%;
+    margin-top:400px;
+    
+}
+.invite-title{
+    width:100%;
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
+    
+}
+.invite-title h2{
+    margin:0;
+    font-size:20px;
+    text-decoration:underline;
+}
+.name-frame{
+    margin-top:10px;
+    width:100%;
+    border:2px solid rgb(249,175,89);
+    padding:15px 10px 10px 10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: "Moul", serif;
+    color:rgb(249,175,89);
+    font-size:20px;
+    border-radius:15px;
+    background:rgba(24, 21, 21, 0.5);
+    box-shadow:inset 0 0 10px rgba(249,175,89,0.5);
+    cursor:pointer;
+
+}
+.name-frame:hover{
+    /* background:rgba(24, 21, 21, 0.8);
+    box-shadow:inset 0 0 20px rgba(249,175,89,0.8); */
+    transform:scale(1.02);
+    transition:all 0.3s ease-in-out;
+}
+.name-frame h1{
+    margin:0;
+    font-size:20px;
+}
 .block-content{
     position: relative;
     width:650px;
@@ -93,7 +151,7 @@ body {
 .music-btn{
     position:fixed;
     right:15px;
-    top:5%;
+    top:8%;
     transform:translateY(-50%);
     width:60px;
     height:60px;
@@ -150,3 +208,134 @@ body {
     font-family:"Moulpali", sans-serif;
     color:rgb(249,175,89);
 }
+
+
+
+.butterfly-field {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+  }
+
+  .butterfly {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    top: -60px;
+    animation-name: flutter-path;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    will-change: transform;
+  }
+
+  .butterfly svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    animation: wing-flap 0.42s ease-in-out infinite;
+    transform-origin: 50% 50%;
+  }
+
+  .butterfly .wing-left,
+  .butterfly .wing-right {
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .butterfly .wing-left { transform-origin: right center; }
+  .butterfly .wing-right { transform-origin: left center; }
+
+  @keyframes wing-flap {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(0.72); }
+  }
+
+  /* Each butterfly gets its own wandering path via
+     individually tuned keyframes + timing so the
+     flock never looks synced or mechanical. */
+  @keyframes flutter-path-1 {
+    0%   { transform: translate(6vw, 100vh) rotate(-6deg); }
+    20%  { transform: translate(18vw, 78vh) rotate(8deg); }
+    40%  { transform: translate(8vw, 55vh) rotate(-10deg); }
+    60%  { transform: translate(22vw, 34vh) rotate(6deg); }
+    80%  { transform: translate(10vw, 14vh) rotate(-8deg); }
+    100% { transform: translate(16vw, -10vh) rotate(4deg); }
+  }
+  @keyframes flutter-path-2 {
+    0%   { transform: translate(85vw, 105vh) rotate(10deg); }
+    25%  { transform: translate(70vw, 80vh) rotate(-8deg); }
+    50%  { transform: translate(84vw, 52vh) rotate(6deg); }
+    75%  { transform: translate(66vw, 26vh) rotate(-10deg); }
+    100% { transform: translate(78vw, -10vh) rotate(6deg); }
+  }
+  @keyframes flutter-path-3 {
+    0%   { transform: translate(40vw, 108vh) rotate(-4deg); }
+    30%  { transform: translate(52vw, 74vh) rotate(9deg); }
+    60%  { transform: translate(36vw, 42vh) rotate(-7deg); }
+    100% { transform: translate(50vw, -12vh) rotate(5deg); }
+  }
+  @keyframes flutter-path-4 {
+    0%   { transform: translate(60vw, 102vh) rotate(6deg); }
+    35%  { transform: translate(46vw, 68vh) rotate(-9deg); }
+    70%  { transform: translate(58vw, 30vh) rotate(7deg); }
+    100% { transform: translate(44vw, -10vh) rotate(-5deg); }
+  }
+
+  .butterfly.b1 { animation-name: flutter-path-1; animation-duration: 17s; animation-delay: 0s; }
+  .butterfly.b2 { animation-name: flutter-path-2; animation-duration: 21s; animation-delay: 3s; }
+  .butterfly.b3 { animation-name: flutter-path-3; animation-duration: 19s; animation-delay: 7s; }
+  .butterfly.b4 { animation-name: flutter-path-4; animation-duration: 23s; animation-delay: 11s; }
+  .butterfly.b5 { animation-name: flutter-path-1; animation-duration: 25s; animation-delay: 14s; width: 24px; height: 24px; opacity: 0.75; }
+  .butterfly.b6 { animation-name: flutter-path-3; animation-duration: 20s; animation-delay: 2s; width: 26px; height: 26px; opacity: 0.8; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .butterfly-field { display: none; }
+  }
+
+  /* ---------------------------------------------
+     SPARKLE FIELD — twinkling gold flecks + a few
+     larger 4-point glints for extra "bling".
+  --------------------------------------------- */
+  .sparkle-field {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 4;
+    overflow: hidden;
+  }
+
+  .sparkle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff6dd 0%, #f0c878 55%, transparent 75%);
+    animation: twinkle ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.3); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+
+  .glint {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    animation: glint-spin ease-in-out infinite;
+  }
+  .glint::before, .glint::after {
+    content: "";
+    position: absolute;
+    background: linear-gradient(90deg, transparent, #f7d98a, #fff6dd, #f7d98a, transparent);
+  }
+  .glint::before { top: 50%; left: 0; width: 100%; height: 2px; transform: translateY(-50%); }
+  .glint::after { left: 50%; top: 0; height: 100%; width: 2px; transform: translateX(-50%); }
+
+  @keyframes glint-spin {
+    0%, 100% { opacity: 0; transform: rotate(0deg) scale(0.4); }
+    50% { opacity: 1; transform: rotate(90deg) scale(1); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .sparkle-field { display: none; }
+  }
