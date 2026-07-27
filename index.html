@@ -19,10 +19,7 @@
 
     <!-- Khmer Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" >
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@100..900&display=swap" rel="stylesheet">
 
     <meta name="description" content="You're invited to our wedding ceremony.">
@@ -113,7 +110,81 @@
             </div>
 
         </div>
+        <div class="owener-and-ceremony-section w-100 p-3">
+            <div class="infor-content">
+                <div class="wedding-title mt-3 w-100 d-flex justify-content-center align-items-center" data-aos="fade-up">
+                    <p>សិរីមង្គលអាពាហ៍ពិពាហ៍</p>
+                </div>
+                <div class="name-logo" data-aos="fade-up">
+                    <img src="src/img/logo-name.png" alt="Name Logo" class="img-fluid">
+                </div>
+                <div class="parents-name">
+                    <div class="father-name w-100 px-1 d-flex justify-content-between align-items-center">
+                        <div class="groom-father" data-aos="fade-right">
+                            <p>លោក អ៊ូ តាំងអ៊ាវ</p>
+                        </div>
+                        <div class="bride-father" data-aos="fade-left">
+                            <p>លោក សែត សឿន</p>
+                        </div>
+                    </div>
+                    <div class="mother-name  w-100 px-1 d-flex justify-content-between align-items-center">
+                        <div class="groom-mother" data-aos="fade-right">
+                            <p>លោកស្រី កឹម គឹមហ៊ាន</p>
+                        </div>
+                        <div class="bride-mother" data-aos="fade-left">
+                            <p>លោកស្រី ស វី</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="invitation-title p-2 w-100 d-flex justify-content-center align-items-center" data-aos="fade-up">
+                    <p>សូមគោរពអញ្ជើញ</p>
+                </div>
+                <div class="invitaion-des d-flex justify-content-center align-items-center" data-aos="fade-up">
+                    <p>
+                        សម្ដេច ទ្រង់ ឯកឧត្ដម អ្នកឧកញ្ញា លោកឧកញ្ញា លោកជំទាវ លោក លោកស្រី អ្នកនាងកញ្ញា និងប្រិយមិត្ត អញ្ញើញចូលរូមជា អធិបតី និងជាភ្ញៀវកិត្តយស ដើម្បីប្រសិទ្ធពរជ័យ សិរីរួស្ដីជ័យមង្គលក្នុងពិធីរៀបអាពាហ៍ពិពាហ៍ កូនប្រុស កូនស្រីរបស់យើងខ្ញុំ
+                    </p>
+                </div>
+                <div class="bride-and-groom d-flex justify-content-between align-items-center w-100 p-2">
+                    <div class="groom w-50 d-flex justify-content-center">
+                        <p>កូនប្រុសនាម</p>
+                    </div>
+                    <div class="bride w-50 d-flex justify-content-center align-items-center">
+                        <p>កូនស្រីនាម</p>
+                    </div>
+                </div>
+                <div class="bride-groom-name d-flex justify-content-between align-items-center w-100 p-2">
+                    <div class="groom-name w-50 d-flex justify-content-center align-items-center" data-aos="fade-right">
+                        <p>អ៊ូ ឌីណា</p>
+                    </div>
+                    <div class="bride-name w-50 d-flex justify-content-center align-items-center" data-aos="fade-left">
+                        <p>សឿន ស្រីពេជ្រ</p>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+        <div class="agenda-section w-100 p-3 ">
+            <h1 class=" text-center agenda-title-font mt-2">របៀបវារៈ</h1>
+            <div class="kbach-img w-100 p-3 d-flex justify-content-center align-items-center">
+                <img src="src/img/kbach.png" class="img-fluid w-50" alt="kbach">
+
+            </div>
+            <div class="agenda-card">
+                <div class="agenda">
+                    <div class="agenda-image">
+
+                    </div>
+                    <div class="agenda-description">
+                    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+         <div class="kbach-img w-100 p-3 d-flex justify-content-center align-items-center">
+            <img src="src/img/kbach.png" class="img-fluid w-50" alt="kbach">
+
+        </div>
         <div class="gallary-section p-3">
             <h2 class="text-center mb-4 mt-2 agenda-title-font">វិចិត្រសាល</h2>
 
@@ -157,9 +228,7 @@
             <img src="src/img/kbach.png" class="img-fluid w-50" alt="kbach">
 
         </div>
-        <div class="agenda-section w-100 p-3 ">
-            <h1 class=" text-center agenda-title-font">របៀបវារៈ</h1>
-        </div>
+       
         
     </div>
 
@@ -178,97 +247,7 @@
     <i class="bi bi-play-fill" id="musicIcon"></i>
 </button>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-   AOS.init({
-    duration: 1000,
-    once: true
-});
-
-const scrollContainer = document.querySelector('.block-scroll');
-
-scrollContainer.addEventListener('scroll', () => {
-    AOS.refresh();
-});
-
-
-const music = document.getElementById("bgMusic");
-const btn = document.getElementById("musicBtn");
-const icon = document.getElementById("musicIcon");
-
-let playing = false;
-let hideTimer;
-
-// Show button and hide after 5 seconds
-function showButton() {
-    btn.classList.remove("hide");
-
-    clearTimeout(hideTimer);
-
-    hideTimer = setTimeout(() => {
-        btn.classList.add("hide");
-    }, 5000);
-}
-
-// Update button state
-function updateButtonState(isPlaying) {
-    playing = isPlaying;
-
-    if (playing) {
-        icon.className = "bi bi-pause-fill";
-        btn.classList.add("playing");
-    } else {
-        icon.className = "bi bi-play-fill";
-        btn.classList.remove("playing");
-    }
-}
-
-// Try autoplay when page loads
-window.addEventListener("load", async () => {
-
-    try {
-        music.volume = 0.5;      // Optional: 50% volume
-        await music.play();
-
-        updateButtonState(true);
-
-    } catch (err) {
-        // Browser blocked autoplay
-        console.log("Autoplay blocked:", err);
-        updateButtonState(false);
-    }
-
-    showButton();
-});
-
-// Play / Pause
-btn.addEventListener("click", async () => {
-
-    try {
-
-        if (playing) {
-            music.pause();
-            updateButtonState(false);
-        } else {
-            await music.play();
-            updateButtonState(true);
-        }
-
-    } catch (err) {
-        console.error(err);
-    }
-
-    showButton();
-});
-
-// Show button while scrolling
-window.addEventListener("scroll", showButton);
-
-const scrollArea = document.querySelector(".block-scroll");
-
-if (scrollArea) {
-    scrollArea.addEventListener("scroll", showButton);
-}
-</script>
+<script src="src/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

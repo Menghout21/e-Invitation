@@ -207,6 +207,7 @@ body {
 .agenda-title-font{
     font-family:"Moulpali", sans-serif;
     color:rgb(249,175,89);
+    text-decoration:underline;
 }
 
 
@@ -339,3 +340,87 @@ body {
   @media (prefers-reduced-motion: reduce) {
     .sparkle-field { display: none; }
   }
+
+.agenda-card{
+    width:100%;
+    /* min-height:200px; */
+    background:rgba(24, 21, 21, 0.5);
+    border:2px solid rgb(249,175,89);
+    box-shadow:inset 0 0 10px rgba(249,175,89,0.5);
+    border-radius:15px;
+    margin-top:20px;       
+}
+.agenda{
+    width:100%;
+    padding:10px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
+    font-size:20px;
+}
+
+.infor-content{
+    /* background:rgba(24, 21, 21, 0.5); */
+    border:2px solid rgb(249,175,89);
+    box-shadow:inset 0 0 10px rgba(249,175,89,0.5);
+    border-radius:15px;
+    margin-top:20px;   
+}
+.name-logo{
+    width:100%;
+    /* padding:10px; */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.name-logo img{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+}
+.parents-name{
+    width:100%;
+    padding:10px;
+    /* background:rgba(194, 27, 27, 0.5); */
+}
+
+.groom-father, .groom-mother, .bride-father, .bride-mother{
+    /* padding:5px; */
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    font-family:"Moul", sans-serif;
+    color:rgb(249,175,89);
+    font-size:15px;
+}
+.wedding-title{
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
+    font-size:20px;
+}
+.invitation-title{
+    font-family:"Moul", sans-serif;
+    color:rgb(249,175,89);
+    font-size:20px;
+}
+.invitaion-des{
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
+    font-size:12px;
+    text-align:center;
+    line-height:2.5;
+}
+.bride , .groom{
+    font-family:"Moulpali", sans-serif;
+    color:rgb(249,175,89);
+    font-size:15px;
+}
+.groom-name, .bride-name{
+    font-family:"Moul", sans-serif;
+    color:rgb(249,175,89);
+    font-size:20px;
+}
