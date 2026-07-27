@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Moulpali&display=swap');
 
 body {
-    font-family: "Moulpali", sans-serif;
+    font-family: "Moulpali", serif;
 }
 *{
     margin: 0;
@@ -60,7 +60,7 @@ body {
     justify-content:center;
     align-items:center;
     text-align:center;
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     
 }
@@ -82,7 +82,7 @@ body {
     justify-content:center;
     align-items:center;
     text-align:center;
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     
 }
@@ -205,7 +205,7 @@ body {
 }
 
 .agenda-title-font{
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     text-decoration:underline;
 }
@@ -357,7 +357,7 @@ body {
     justify-content:center;
     align-items:center;
     text-align:center;
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     font-size:20px;
 }
@@ -393,34 +393,34 @@ body {
     justify-content:center;
     align-items:center;
     text-align:center;
-    font-family:"Moul", sans-serif;
+    font-family:"Moul", serif;
     color:rgb(249,175,89);
     font-size:15px;
 }
 .wedding-title{
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     font-size:20px;
 }
 .invitation-title{
-    font-family:"Moul", sans-serif;
+    font-family:"Moul", serif;
     color:rgb(249,175,89);
     font-size:20px;
 }
 .invitaion-des{
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     font-size:12px;
     text-align:center;
     line-height:2.5;
 }
 .bride , .groom{
-    font-family:"Moulpali", sans-serif;
+    font-family:"Moulpali", serif;
     color:rgb(249,175,89);
     font-size:15px;
 }
 .groom-name, .bride-name{
-    font-family:"Moul", sans-serif;
+    font-family:"Moul", serif;
     color:rgb(249,175,89);
     font-size:20px;
 }
