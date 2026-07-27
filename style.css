@@ -363,7 +363,7 @@ body {
 }
 
 .infor-content{
-    /* background:rgba(24, 21, 21, 0.5); */
+    background:rgb(242 234 233 / 58%);
     border:2px solid rgb(249,175,89);
     box-shadow:inset 0 0 10px rgba(249,175,89,0.5);
     border-radius:15px;
