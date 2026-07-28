@@ -78,7 +78,7 @@ body {
 /* Tablets and phones */
 @media (max-width: 768px){
     .invite-name{
-        margin-top: 300px;
+        margin-top: 280px;
     }
 }
 .invite-title{
