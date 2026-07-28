@@ -149,36 +149,49 @@ body {
 }
 
 .music-btn{
-    position:fixed;
-    right:15px;
-    top:8%;
-    transform:translateY(-50%);
-    width:60px;
-    height:60px;
-    border:none;
-    border-radius:50%;
-    background:#ffffff;
-    color:#d89c3d;
-    font-size:28px;
-    box-shadow:0 5px 20px rgba(0,0,0,.25);
-    cursor:pointer;
-    z-index:9999;
+    position: fixed;
+    right: 15px;
+    top: 8%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #d89c3d;
+    font-size: 28px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.25);
+    cursor: pointer;
+    z-index: 9999;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    transition:.4s;
+    transition: all .4s ease;
+
+    /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
+/* Show button */
+.music-btn.show{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Auto-hide after 5 seconds */
 .music-btn.hide{
-    opacity:0;
-    transform:translateY(-50%) translateX(80px);
-    pointer-events:none;
+    opacity: 0;
+    transform: translateY(-50%) translateX(80px);
+    pointer-events: none;
 }
 
 .music-btn:hover{
-    transform:translateY(-50%) scale(1.08);
+    transform: translateY(-50%) scale(1.08);
 }
 
 @media(max-width:768px){
@@ -344,7 +357,7 @@ body {
 .agenda-card{
     width:100%;
     /* min-height:200px; */
-    background:rgba(24, 21, 21, 0.5);
+    background:rgb(242 234 233 / 36%);
     border:2px solid rgb(249,175,89);
     box-shadow:inset 0 0 10px rgba(249,175,89,0.5);
     border-radius:15px;
@@ -380,6 +393,12 @@ body {
     width:100px;
     height:100px;
     object-fit:cover;
+    cursor: pointer;
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+}
+.name-logo img:hover{
+    transform: scale(1.12) translateY(-5px);
 }
 .parents-name{
     width:100%;
@@ -423,4 +442,130 @@ body {
     font-family:"Moul", serif;
     color:rgb(249,175,89);
     font-size:20px;
+}
+.invitaion-des-date{
+    font-family:"Moulpali", serif;
+    color:rgb(249,175,89);
+    font-size:12px;
+    text-align:center;
+    line-height:2.5;
+}
+.text-thanks{
+    font-family:"Moulpali", serif;
+    color:rgb(249,175,89);
+    font-size:10px;
+    text-align:center;
+}
+
+.open-invite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.invite-btn{
+    padding: 14px 40px;
+    font-size: 20px;
+    font-family: "Moul", serif;
+    color: #fff;
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .35s ease;
+    box-shadow: 0 8px 20px rgba(184,134,11,.35);
+    position: relative;
+    overflow: hidden;
+}
+
+.invite-btn::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 70%;
+    height: 100%;
+    background: rgba(255,255,255,.35);
+    transform: skewX(-25deg);
+    transition: .6s;
+}
+
+.invite-btn:hover::before{
+    left: 150%;
+}
+
+.invite-btn:hover{
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(184,134,11,.45);
+}
+
+.invite-btn:active{
+    transform: scale(.97);
+}
+
+
+/* Welcome screen */
+#welcome-content {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+/* Hide animation */
+#welcome-content.hide {
+    opacity: 0;
+    transform: translateY(-30px);
+    pointer-events: none;
+}
+
+/* Main content */
+#all-content {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(30px);
+    transition: opacity .6s ease, transform .6s ease;
+    height: 0;
+    overflow: hidden;
+}
+
+/* Show animation */
+#all-content.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    height: auto;
+    overflow: visible;
+}
+.agenda-description{
+    border-left: 3px solid #d4af37;
+    padding-left: 20px;
+    position: relative;
+}
+
+.agenda-description::before{
+    content: "";
+    position: absolute;
+    left: -8px;
+    top: 0;
+    width: 14px;
+    height: 14px;
+    background: #d4af37;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+.agenda-time, .agenda-des{
+    text-align: left;
+    font-size: 15px;
+}
+.agenda-date{
+    font-family:"Moulpali", serif;
+    color:rgb(249,175,89);
+    font-size:12px;
+}
+.agenda-image img{
+    width:60px;
+    height:60px;
+    object-fit: cover;
 }

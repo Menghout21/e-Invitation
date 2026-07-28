@@ -1,16 +1,24 @@
-
+// ===============================
+// AOS
+// ===============================
 AOS.init({
-duration: 1000,
-once: true
+    duration: 1000,      // Animation duration
+    once: false,         // Animate every time the element enters the viewport
+    mirror: true,        // Animate again when scrolling back up
+    offset: 100,         // Trigger animation 100px before the element enters
+    easing: "ease-in-out"
 });
+// Refresh AOS if using a custom scroll container
+const scrollContainer = document.querySelector(".block-scroll");
+if (scrollContainer) {
+    scrollContainer.addEventListener("scroll", () => {
+        AOS.refresh();
+    });
+}
 
-const scrollContainer = document.querySelector('.block-scroll');
-
-scrollContainer.addEventListener('scroll', () => {
-    AOS.refresh();
-});
-
-
+// ===============================
+// Music
+// ===============================
 const music = document.getElementById("bgMusic");
 const btn = document.getElementById("musicBtn");
 const icon = document.getElementById("musicIcon");
@@ -18,8 +26,12 @@ const icon = document.getElementById("musicIcon");
 let playing = false;
 let hideTimer;
 
-// Show button and hide after 5 seconds
+
+// Show music button for 5 seconds
 function showButton() {
+    if (!btn) return;
+
+    btn.classList.add("show");
     btn.classList.remove("hide");
 
     clearTimeout(hideTimer);
@@ -29,8 +41,12 @@ function showButton() {
     }, 5000);
 }
 
-// Update button state
+
+// Update play/pause icon
 function updateButtonState(isPlaying) {
+
+    if (!btn || !icon) return;
+
     playing = isPlaying;
 
     if (playing) {
@@ -42,49 +58,102 @@ function updateButtonState(isPlaying) {
     }
 }
 
-// Try autoplay when page loads
-window.addEventListener("load", async () => {
 
-    try {
-        music.volume = 0.5;      // Optional: 50% volume
-        await music.play();
+// Play / Pause button
+if (btn && music) {
 
-        updateButtonState(true);
+    btn.addEventListener("click", async () => {
 
-    } catch (err) {
-        // Browser blocked autoplay
-        console.log("Autoplay blocked:", err);
-        updateButtonState(false);
-    }
+        try {
 
-    showButton();
-});
+            if (playing) {
 
-// Play / Pause
-btn.addEventListener("click", async () => {
+                music.pause();
+                updateButtonState(false);
 
-    try {
+            } else {
 
-        if (playing) {
-            music.pause();
-            updateButtonState(false);
-        } else {
-            await music.play();
-            updateButtonState(true);
+                await music.play();
+                updateButtonState(true);
+
+            }
+
+        } catch (err) {
+
+            console.error(err);
+
         }
 
-    } catch (err) {
-        console.error(err);
-    }
+        showButton();
 
-    showButton();
-});
+    });
 
-// Show button while scrolling
+}
+
+
+// Show music button while scrolling
 window.addEventListener("scroll", showButton);
 
-const scrollArea = document.querySelector(".block-scroll");
+if (scrollContainer) {
+    scrollContainer.addEventListener("scroll", showButton);
+}
 
-if (scrollArea) {
-    scrollArea.addEventListener("scroll", showButton);
+
+
+// ===============================
+// Open Invitation
+// ===============================
+const inviteBtn = document.querySelector(".invite-btn");
+const welcomeContent = document.getElementById("welcome-content");
+const allContent = document.getElementById("all-content");
+
+if (inviteBtn && welcomeContent && allContent) {
+
+    inviteBtn.addEventListener("click", async () => {
+
+        // Show music button
+        if (btn) {
+            btn.classList.add("show");
+        }
+
+        // Play background music
+        if (music) {
+
+            try {
+
+                music.volume = 0.5;
+                await music.play();
+
+                updateButtonState(true);
+
+            } catch (err) {
+
+                console.log("Unable to play music:", err);
+                updateButtonState(false);
+
+            }
+
+        }
+
+        showButton();
+
+        // Hide welcome screen
+        welcomeContent.classList.add("hide");
+
+        setTimeout(() => {
+
+            welcomeContent.style.display = "none";
+
+            // Show invitation
+            allContent.classList.add("show");
+
+            // Refresh AOS
+            setTimeout(() => {
+                AOS.refreshHard();
+            }, 650);
+
+        }, 600);
+
+    });
+
 }
