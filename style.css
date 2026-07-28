@@ -71,9 +71,15 @@ body {
 }
 
 .invite-name{
-    width:100%;
-    margin-top:400px;
-    
+    width: 100%;
+    margin-top: 500px;
+}
+
+/* Tablets and phones */
+@media (max-width: 768px){
+    .invite-name{
+        margin-top: 300px;
+    }
 }
 .invite-title{
     width:100%;
